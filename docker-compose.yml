@@ -1,0 +1,6 @@
+virgo-service:
+  build: ./$VIRGO_VERSION
+  environment:
+    - TZ=CEST
+  ports:
+    - "8080:8080"

@@ -1,0 +1,23 @@
+sudo: required
+language: ruby
+services:
+  - docker
+
+env:
+  DOCKER_COMPOSE_VERSION: 1.8.0
+  VIRGO_VERSION: 3.6.4
+
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
+script:
+  - docker-compose build
+  - docker-compose up -d
+  - docker-compose ps
+  - docker-compose ps | grep Up
+  - docker-compose ps | grep "8080->8080"
+  # wait until Virgo is available and test with Splashscreen
+  - docker-compose run virgo-service wget --retry-connrefused --waitretry=3 --read-timeout=20 --timeout=15 -t 10 -O /dev/null http://virgo-service:8080/
