@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/rennergabor/virgo-tomcat-server.svg?branch=master)](https://travis-ci.org/rennergabor/virgo-tomcat-server)
+[![Docker Pulls](https://img.shields.io/docker/pulls/rennergabor/virgo-tomcat-server.svg?maxAge=2592000)](https://hub.docker.com/r/rennergabor/virgo-tomcat-server)
 
 docker-virgo
 ============
@@ -22,6 +23,7 @@ Or you might simply mount your application jar file as a [docker volume](https:/
 
 	docker run -p 8080:8080 -v path/to/my/app.jar:/opt/virgo/pickup/app.jar rennergabor/virgo-tomcat-server
 
+
 With [Docker Compose](https://docs.docker.com/compose/) a sample docker-compose.yml might be the following:
 ```
 version: '2'
@@ -34,4 +36,5 @@ services:
       - /work/virgo/target/repository/usr:/home/virgo/repository/usr
 
 ``` 
- and then `docker-compose up` 
+
+ and then `docker-compose up` do the trick. 
