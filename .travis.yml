@@ -19,4 +19,4 @@ script:
   - docker-compose ps
   - docker-compose ps | grep Up
   # wait until Virgo is available and test with Splashscreen
-  - wget --retry-connrefused --waitretry=3 --read-timeout=20 --timeout=15 -t 10 -O /dev/null http://localhost:8080/
+  - for i in 1 2 3; do  wget --retry-connrefused --waitretry=3 --read-timeout=30 --timeout=15 -t 10 -O /dev/null http://localhost:8080/ && break || sleep 10; done
