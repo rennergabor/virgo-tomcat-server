@@ -4,8 +4,11 @@ services:
   - docker
 
 env:
-  DOCKER_COMPOSE_VERSION: 1.5.2
-  VIRGO_VERSION: 3.6.4
+  global:
+    DOCKER_COMPOSE_VERSION: 1.5.2
+  matrix:
+    - VIRGO_VERSION=3.6.4
+    - VIRGO_VERSION=3.6.4-jre7-alpine
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
