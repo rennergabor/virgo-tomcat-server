@@ -5,7 +5,7 @@ docker-virgo
 ============
 
 Dockerfile for trusted builds of [Eclipse Virgo](https://eclipse.org/virgo/) on https://registry.hub.docker.com/u/rennergabor/virgo-tomcat-server/
-Images based on official Java8 JRE (Alpine) [java:8-jre-alpine](https://github.com/docker-library/openjdk/blob/54c64cf47d2b705418feb68b811419a223c5a040/8-jre/alpine/Dockerfile)
+Images based on Java8 JRE (Alpine) [java:8-jre-alpine](https://github.com/docker-library/openjdk/blob/54c64cf47d2b705418feb68b811419a223c5a040/8-jre/alpine/Dockerfile) or Java7 JRE (Alpine) [java:7-jre-alpine](https://github.com/docker-library/openjdk/blob/54c64cf47d2b705418feb68b811419a223c5a040/7-jre/alpine/Dockerfile) respectively
 
 ## Customize your container
 
@@ -31,9 +31,9 @@ services:
   virgo:
     image: rennergabor/virgo-tomcat-server:3.6.4
     volumes:
-      - /work/virgo/target/configuration:/home/virgo/configuration
-      - /work/virgo/target/pickup:/home/virgo/pickup
-      - /work/virgo/target/repository/usr:/home/virgo/repository/usr
+      - /work/virgo/target/configuration:/opt/virgo/configuration
+      - /work/virgo/target/pickup:/opt/virgo/pickup
+      - /work/virgo/target/repository/usr:/opt/virgo/repository/usr
 
 ``` 
 
