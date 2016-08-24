@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/rennergabor/virgo-tomcat-server.svg?branch=master)](https://travis-ci.org/rennergabor/virgo-tomcat-server)
 [![Docker Pulls](https://img.shields.io/docker/pulls/rennergabor/virgo-tomcat-server.svg?maxAge=2592000)](https://hub.docker.com/r/rennergabor/virgo-tomcat-server)
+[![](https://images.microbadger.com/badges/image/rennergabor/virgo-tomcat-server.svg)](https://microbadger.com/images/rennergabor/virgo-tomcat-server)
 
 docker-virgo
 ============
