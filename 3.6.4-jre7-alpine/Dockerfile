@@ -1,4 +1,4 @@
-FROM java:7-jre-alpine
+FROM openjdk:7-jre-alpine
 MAINTAINER Gabor Renner <grenner@intrend.hu>
 
 ENV VIRGO_VERSION 3.6.4.RELEASE
